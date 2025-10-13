@@ -16,7 +16,7 @@ kotlin = "2.0.20"
 kmpObservableViewModel = "1.0.0-BETA-5"
 kmpNativeCoroutines = "1.0.0-ALPHA-35"
 
-koin = "4.1.1"
+koin = "3.5.6"
 
 ksp = "2.0.20-1.0.24"
 
