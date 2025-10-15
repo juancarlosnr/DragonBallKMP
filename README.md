@@ -28,7 +28,6 @@ in your IDE’s toolbar or build it directly from the terminal:
   ```shell
   .\gradlew.bat :composeApp:assembleDebug
   ```
-
 ### Build and Run iOS Application
 
 To build and run the development version of the iOS app, use the run configuration from the run widget
