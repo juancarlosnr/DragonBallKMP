@@ -13,10 +13,19 @@ import KMPNativeCoroutinesAsync
 struct HomeScreen: View {
     
     @StateViewModel
-    var homeViewModel = HomeViewModel()
+    var homeViewModel = HomeViewModel(repository: DiHelper().repository)
     
     var body: some View {
-        Text(homeViewModel.example)
+        if !homeViewModel.characters.isEmpty {
+            LazyVStack{
+                ForEach(homeViewModel.characters,id:\.self){
+                    character in
+                    Text(character.name)
+                }
+            }
+        }else{
+            Text("Error")
+        }
     }
 }
 

@@ -1,6 +1,8 @@
 package com.juancarlosnr.dragonballkmp.di
 
+import com.juancarlosnr.dragonballkmp.data.RepositoryImpl
 import com.juancarlosnr.dragonballkmp.data.remote.ApiService
+import com.juancarlosnr.dragonballkmp.domain.Repository
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.DefaultRequest
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
@@ -10,6 +12,7 @@ import io.ktor.http.ContentType
 import io.ktor.http.URLProtocol
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
+import org.koin.core.module.dsl.bind
 import org.koin.core.module.dsl.factoryOf
 import org.koin.dsl.module
 
@@ -39,5 +42,6 @@ val dataModule = module {
         }
 
     }
+    factoryOf(::RepositoryImpl){bind<Repository>()}
     factoryOf(::ApiService)
 }
